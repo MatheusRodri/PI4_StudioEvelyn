@@ -1,0 +1,95 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+
+  .lt {
+    display: flex;
+    align-items: center;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        max-width: 300px; // Ajuste o tamanho do logo conforme necessário
+        height: auto;
+        margin-right: 20px; // Espaço entre logo e texto ajustado
+      }
+
+      .frete-gratis {
+        font-size: 24px;
+        color: #666; // Cinza médio
+        margin: 0; // Remove margem adicional
+      }
+    }
+  }
+
+  .nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 10px;
+
+        a {
+          font-size: 18px;
+          color: #666; // Cinza médio
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #ff69b4; // Rosa médio
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  background-color: #fff; // Branco
+  color: #666; // Cinza médio
+  padding: 5px 5px;
+  text-align: center;
+
+  .purple-box {
+    background-color: #d19fbb; // Roxo claro
+    padding: 5px;
+    border-radius: 500px;
+    margin-bottom: 10px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333; // Cinza escuro
+    }
+  }
+}
+
+.content {
+  text-align: center;
+
+  h1 {
+    font-size: 32px;
+    color: #333; // Cinza escuro
+    margin-bottom: 50px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #666; // Cinza médio
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+}
