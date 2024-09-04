@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { alterar, deletar, exibir, exibirUsuario, salvar } from "../repository/login.js";
 let servidor = Router()
+
 servidor.get('/usuarios', async (req, res) => {
     try {
         let usuarios = await exibir();

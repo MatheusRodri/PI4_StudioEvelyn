@@ -14,7 +14,8 @@ servidor.use((err, req, res, next) => {
   res.status(500).send('Erro interno do servidor');
 });
 
-let port = process.env.PORT;
+
 servidor.listen(3000, () => console.log("API SUBIU!"));
+
 
 export default servidor

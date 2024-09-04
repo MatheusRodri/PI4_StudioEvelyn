@@ -10,13 +10,13 @@ export default function Home() {
           {/* Agrupando a imagem e o texto */}
           <div className="logo-container">
             {/* Importando a imagem da pasta "public" */}
-            <img src={process.env.PUBLIC_URL + '/logo.png'} alt="logoGlambeauty" className='logo'/>
+            <img src={process.env.PUBLIC_URL + '/logo_v2.png'} alt="logoGlambeauty" className='logo'/>
           </div>
         </div>
         <nav className="nav">
           <ul>
             <li><Link to="/Login">Login</Link></li>
-            <li><Link to="/Produtos">Produtos</Link></li>
+            <li><Link to="/Produtos">Serviços</Link></li>
             <li><Link to="/Sobre">Sobre</Link></li>
             <li><Link to="/Atendimento">Atendimento</Link></li>
           </ul>
