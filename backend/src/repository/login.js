@@ -1,11 +1,9 @@
-import connectToDatabase from "../conection.js";
-
+import con from "../conection.js";
 
 export async function exibir() {
-    let connection = await connectToDatabase();
     try {
         let comando = `SELECT * FROM dados`;
-        let resp = await connection.query(comando, []);
+        let resp = await con.query(comando, []);
         let linhas = resp.length;
         if (linhas === 0) {
             throw new Error("Erro ao realizar operação!");
