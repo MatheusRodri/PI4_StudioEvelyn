@@ -9,7 +9,7 @@ import UserConsultPage from './pages/UserConsultPage';
 import Home from './pages/home';
 import Login from './pages/Login';
 import Senha from './pages/Senha';
-import Produtos from './pages/Produtos';
+import Servicos from './pages/Servicos';
 import Sobre from './pages/Sobre';
 import Atendimento from './pages/Atendimento';
 import { ToastContainer } from 'react-toastify';
@@ -77,7 +77,7 @@ ReactDOM.render(
         <Route path="/login" element={<Login />} />
         <Route path="/senha" element={<Senha />} />
         <Route path="/app" element={<App />} />
-        <Route path='/produtos' element={<Produtos />} />
+        <Route path='/servicos' element={<Servicos />} />
         <Route path='/sobre' element={<Sobre />} />
         <Route path='/atendimento' element={<Atendimento />} />
         <Route path='/cadastrousuario' element={<CadastroUsuario/>} />

@@ -16,8 +16,8 @@ export default function Home() {
         <nav className="nav">
           <ul>
             <li><Link to="/Login">Login</Link></li>
-            <li><Link to="/Produtos">Serviços</Link></li>
-            <li><Link to="/Sobre">Sobre</Link></li>
+            <li><Link to="/Servicos">Serviços</Link></li>
+            <li><Link to="/Servicos">Serviços</Link></li>
             <li><Link to="/Atendimento">Atendimento</Link></li>
           </ul>
         </nav>
