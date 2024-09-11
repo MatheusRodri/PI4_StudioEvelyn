@@ -12,6 +12,6 @@ servidor.use((err, req, res, next) => {
 });
 
 let port = process.env.PORT;
-servidor.listen(3000, () => console.log("API SUBIU!"));
+servidor.listen(port, () => console.log("API SUBIU!"));
 
 export default servidor
