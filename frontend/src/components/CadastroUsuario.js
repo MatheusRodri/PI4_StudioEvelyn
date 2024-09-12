@@ -1,6 +1,8 @@
+//Import das bibliotecas e funções
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+//Função CadastroUsuario
 const CadastroUsuario = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -9,10 +11,12 @@ const CadastroUsuario = () => {
   const [modoEdicao, setModoEdicao] = useState(false);
   const [usuarioSelecionado, setUsuarioSelecionado] = useState(null);
 
+  //Essa função é chamada toda vez que a página é carregada
   useEffect(() => {
     carregarUsuarios();
   }, []);
 
+  //Função para carregar os usuários
   const carregarUsuarios = async () => {
     try {
       const response = await axios.get('http://127.0.0.1:5000/usuarios');
@@ -22,6 +26,7 @@ const CadastroUsuario = () => {
     }
   };
 
+  //Função para cadastrar ou editar um usuário
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -47,6 +52,7 @@ const CadastroUsuario = () => {
     }
   };
 
+  //Função para excluir um usuário
   const handleExcluirUsuario = async (id) => {
     try {
       await axios.delete(`http://127.0.0.1:5000/usuarios/${id}`);
@@ -58,6 +64,7 @@ const CadastroUsuario = () => {
     }
   };
 
+  //Função para editar um usuário
   const handleEditarUsuario = async (id) => {
     try {
       const response = await axios.get(`http://127.0.0.1:5000/usuarios/${id}`);
@@ -73,6 +80,7 @@ const CadastroUsuario = () => {
     }
   };
 
+  //Criação do componente
   return (
     <div>
       <h2>{modoEdicao ? 'Editar Usuário' : 'Cadastro de Usuário'}</h2>

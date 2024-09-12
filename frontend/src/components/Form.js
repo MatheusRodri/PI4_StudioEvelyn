@@ -1,8 +1,11 @@
+// Importe da biblioteca React e funções
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import axios from "axios";
 
+
+//Estilização do formulário
 const FormContainer = styled.form`
   display: flex;
   align-items: flex-start; 
@@ -52,6 +55,7 @@ const ExitButton = styled.button`
   height: 42px;
   margin-left: 10px;
 `;
+
 
 const Form = ({ getUsers, onEdit, setOnEdit }) => {
   const ref = useRef();
@@ -125,7 +129,6 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         console.error('Erro:', error.response ? error.response.data : error.message);
     }
 };
-
   return (
     <FormContainer ref={ref} onSubmit={handleSubmit}>
       <InputArea>
