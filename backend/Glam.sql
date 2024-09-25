@@ -1,18 +1,36 @@
-CREATE DATABASE query1;
+create database studio;
+USE STUDIO;
 
-USE query1;
 
-Create table dados (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
-    endereco VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL
+CREATE TABLE AGENDAMENTOS (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    CPF  VARCHAR(14) NOT NULL,
+    NOME VARCHAR(255) NOT NULL,
+    DATA DATE NOT NULL,
+    HORA TIME NOT NULL,
+    PROCEDIMENTO VARCHAR(255) NOT NULL,
+    TP_PAGAMENTO VARCHAR (255) NOT NULL 
 );
 
-INSERT INTO dados (nome, endereco, email) VALUES ('João Silva', 'Rua das Flores, 123', 'joao.silva@example.com');
-
-select * from dados;
 
 
+INSERT INTO AGENDAMENTOS (CPF, NOME, DATA, HORA, PROCEDIMENTO, TP_PAGAMENTO) VALUES
+('111.111.111-11', 'João Silva', '2024-09-30', '09:00:00', 'Sobrancelha', 'ONLINE'),
+('111.111.111-11', 'João Silva', '2024-09-30', '09:00:00', 'Cílios', 'ONLINE'),
+('222.222.222-22', 'Maria Oliveira', '2024-10-01', '14:30:00', 'Cílios', 'PRESENCIAL'),
+('222.222.222-22', 'Maria Oliveira', '2024-10-01', '15:00:00', 'Sobrancelha', 'PRESENCIAL'),
+('333.333.333-33', 'Pedro Santos', '2024-10-02', '11:00:00', 'Sobrancelha','ONLINE');
+
+
+SELECT 
+    ID, 
+    CPF, 
+    NOME, 
+    DATE_FORMAT(DATA, '%d/%m/%Y') AS DATA, 
+    HORA, 
+    PROCEDIMENTO, 
+    TP_PAGAMENTO 
+FROM AGENDAMENTOS
+WHERE DATA = '2024-09-30';
 
 
