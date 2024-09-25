@@ -19,15 +19,15 @@
       align-items: center;
 
       .logo {
-        max-width: 300px; // Ajuste o tamanho do logo conforme necessário
+        max-width: 300px; 
         height: auto;
-        margin-right: 20px; // Espaço entre logo e texto ajustado
+        margin-right: 20px; 
       }
 
       .frete-gratis {
         font-size: 24px;
-        color: #666; // Cinza médio
-        margin: 0; // Remove margem adicional
+        color: #666; 
+        margin: 0; 
       }
     }
   }
@@ -44,12 +44,12 @@
 
         a {
           font-size: 18px;
-          color: #666; // Cinza médio
+          color: #666; 
           text-decoration: none;
           transition: color 0.3s ease;
 
           &:hover {
-            color: #ff69b4; // Rosa médio
+            color: #ff69b4; 
           }
         }
       }
@@ -58,13 +58,13 @@
 }
 
 .hero {
-  background-color: #fff; // Branco
-  color: #666; // Cinza médio
+  background-color: #fff; 
+  color: #666; 
   padding: 5px 5px;
   text-align: center;
 
   .purple-box {
-    background-color: #d19fbb; // Roxo claro
+    background-color: #d19fbb; 
     padding: 5px;
     border-radius: 500px;
     margin-bottom: 10px;
@@ -72,7 +72,7 @@
     h2 {
       font-size: 20px;
       font-weight: bold;
-      color: #333; // Cinza escuro
+      color: #333; 
     }
   }
 }
@@ -82,13 +82,13 @@
 
   h1 {
     font-size: 32px;
-    color: #333; // Cinza escuro
+    color: #333; 
     margin-bottom: 50px;
   }
 
   p {
     font-size: 18px;
-    color: #666; // Cinza médio
+    color: #666; 
     line-height: 1.6;
     margin-bottom: 20px;
   }

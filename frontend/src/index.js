@@ -10,8 +10,6 @@ import Home from './pages/home';
 import Login from './pages/Login';
 import Senha from './pages/Senha';
 import Servicos from './pages/Servicos';
-import Sobre from './pages/Sobre';
-import Atendimento from './pages/Atendimento';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
@@ -78,8 +76,6 @@ ReactDOM.render(
         <Route path="/senha" element={<Senha />} />
         <Route path="/app" element={<App />} />
         <Route path='/servicos' element={<Servicos />} />
-        <Route path='/sobre' element={<Sobre />} />
-        <Route path='/atendimento' element={<Atendimento />} />
         <Route path='/cadastrousuario' element={<CadastroUsuario/>} />
        </Routes>
     </Router>

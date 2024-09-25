@@ -23,86 +23,117 @@
       font-weight: bold;
     }
 
-    &.batom {
-      .batom {
+    &.brasileiro {
+      .brasileiro {
         width: 100px;
         height: 100px;
         object-fit: cover;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        border-radius: 50%;
       }
     }
 
-    &.demaquilante {
-      .demaquilante {
+    &.henna {
+      .henna {
         width: 100px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
       }
     }
 
-    &.blush {
-      .blush {
+    &.hibrido {
+      .hibrido{
         width: 100px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
       }
     }
-    &.base {
-      .base {
+    &.combo {
+      .combo {
         width: 100px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
       }
     }
-    &.po {
-      .po {
+    &.fox {
+      .fox {
         width: 100px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
       }
     }
-    &.primer {
-      .primer {
+    &.labio {
+      .labio {
         width: 130px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
       }
     }
-    &.sombra {
-      .sombra{
+    &.mega {
+      .mega{
         width: 100px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
       }
     }
-    &.delineador{
-      .delineador{
+    &.micropigmentacao{
+      .micropigmentacao{
         width: 100px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
       }
     }
-    &.gloss{
-      .gloss{
+    &.natural{
+      .natural{
         width: 100px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
       }
     }
-    &.corretivo{
-      .corretivo{
+    &.shadow{
+      .shadow{
         width: 100px;
         height: 100px;
         object-fit: cover;
         margin-bottom: 10px;
+        border-radius: 50%;
+      }
+    }
+    &.russo{
+      .russo{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        border-radius: 50%;
+      }
+    }
+    &.design{
+      .design{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        border-radius: 50%;
+
 
         &.alerta {
           background-color: #fce4ec;
@@ -110,6 +141,8 @@
           border-radius: 5px;
           padding: 10px;
           margin-top: 20px
+
+          
         }
         
       }

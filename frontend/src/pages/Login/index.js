@@ -10,7 +10,7 @@ export default function Login() {
     const password = event.target.password.value;
 
     
-    if (email === 'glambeauty@gmail.com' && password === '2121') {
+    if (email === 'studio@gmail.com' && password === '2121') {
       
       window.location.href = '/cadastrousuario';
     } else {
