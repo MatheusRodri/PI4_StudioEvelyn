@@ -1,6 +1,6 @@
 # React Js
 
-ReactJs, é um framework, desenvolvido pelo Facebook, na qual veio para facilitar o 
+ReactJs, é um framework, desenvolvido pelo Facebook, na qual veio para facilitar o desenvolvimento web.
 
 
 ## Explicação de como funciona esse projeto

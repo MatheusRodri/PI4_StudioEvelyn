@@ -1,0 +1,26 @@
+.card-procedimento{
+    height: 350px;
+    width: 300px;
+    background-color: blue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+    margin-right: 20px;
+
+    overflow: hidden;
+}
+
+.card-procedimento img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.card-procedimento p{
+    width: 150px;
+    text-align: center;
+}
