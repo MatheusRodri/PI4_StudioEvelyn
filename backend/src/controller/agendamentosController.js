@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { exibirAgendamentos, criarAgendamento, excluirAgendamento } from "../repository/agendamentos.js";
+import { exibirAgendamentos, criarAgendamento, excluirAgendamento,exibirAgendamentoCliente,exibirAgendamentoData } from "../repository/agendamento.js";
 
 const servidor = Router();
 
@@ -30,6 +30,32 @@ servidor.delete('/agendamentos/:id', async (req, res) => {
         const id = req.params.id;
         const resposta = await excluirAgendamento(id);
         res.status(200).json(resposta);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Rota para exibir os agendamentos de um cliente
+servidor.get('/agendamentos/cliente', async (req, res) => {
+    try {
+        const cpf = req.body;
+        console.log(cpf);
+        const agendamentos = await exibirAgendamentoCliente(cpf);
+        res.status(200).json(agendamentos);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
+servidor.get('/agendamentos/data', async (req, res) => {
+    try {
+        const agendamento = req.body;
+    
+        console.log(agendamento);
+        
+        const agendamentos = await exibirAgendamentoData(agendamento);
+        res.status(200).json(agendamentos);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

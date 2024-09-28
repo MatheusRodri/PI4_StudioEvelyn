@@ -1,5 +1,6 @@
-import con from "../conection.js";
+import con from "../connection.js";
 
+// Rota para exibir todos os agendamentos
 export async function exibirAgendamentos() {
     try {
         let comando = `SELECT * FROM agendamentos`;
@@ -13,6 +14,8 @@ export async function exibirAgendamentos() {
         throw new Error(error.message);
     }
 }
+
+// Rota para criar um novo agendamento
 export async function criarAgendamento(agendamento) {
     try {
         const comando = `INSERT INTO AGENDAMENTOS (CPF, NOME, DATA, HORA, PROCEDIMENTO, TP_PAGAMENTO) VALUES (?, ?, ?, ?, ?, ?)`;
@@ -24,12 +27,37 @@ export async function criarAgendamento(agendamento) {
     }
 }
 
+// Rota para excluir um agendamento
 export async function excluirAgendamento(id) {
     try {
         const comando = `DELETE FROM AGENDAMENTOS WHERE ID = ?`;
         await con.query(comando, [id]);
         return { mensagem: "Agendamento deletado com sucesso!" };
     } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Rota para exibir os agendamentos de um cliente
+export async function exibirAgendamentoCliente({cpf}) {
+    try {
+        const query = `SELECT * FROM AGENDAMENTOS WHERE CPF = ?`;
+        let resp = await con.query(query, [cpf]);
+        return resp[0];
+    }
+    catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Rota para exibir os agendamentos de um dia
+export async function exibirAgendamentoData(agendamento) {
+    try {
+        const query = `SELECT * FROM AGENDAMENTOS WHERE DATA = ?`;
+        let resp = await con.query(query, [agendamento.data]);
+        return resp[0];
+    }
+    catch (error) {
         throw new Error(error.message);
     }
 }

@@ -1,11 +1,15 @@
 import 'dotenv/config'
+//importação das funcionalidades do express, cors e do controller
 import express from 'express'
 import cors from 'cors'
-import loginController from "../src/controller/loginController.js"
+import agendamentoController from "./controller/agendamentosController.js"
+
+//criação do servidor
 const servidor = express();
 servidor.use(cors());
 servidor.use(express.json());
-servidor.use(loginController);
+servidor.use(agendamentoController);
+
 servidor.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Erro interno do servidor');
