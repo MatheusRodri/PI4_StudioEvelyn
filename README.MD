@@ -1,7 +1,8 @@
 
 ### Requisitos para o projeto
 - Editor de código Ex: Vscode, WebStorm...
-- MySQL Workbench 
+- MySQL Workbench
+- NodeJs 
   
 ### Como rodar o projeto
 - Faça o clone do projeto
