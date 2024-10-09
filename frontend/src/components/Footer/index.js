@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import './index.css';
 
 export default function Footer(){
@@ -14,6 +14,9 @@ export default function Footer(){
                 </Link>
                 <Link className="icon"  href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                     <FaInstagram />
+                </Link>
+                <Link className="icon" href="#" target="_blank" rel="noreferrer">
+                    <FaWhatsapp/>
                 </Link>
             </div>
         </div>

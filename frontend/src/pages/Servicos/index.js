@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'; // Importe o arquivo SCSS
-import CardProcedimento from '../../components/cardProcedimento';
+import CardProcedimento from '../../components/CardProcedimento';
 
 function ProductPage() {
   // Array de produtos
