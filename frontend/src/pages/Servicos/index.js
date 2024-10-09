@@ -23,7 +23,6 @@ function ProductPage() {
   return (
     <div className="container">
       <div className="sessao">
-        <h2>Nossa linha exclusiva de maquiagens!</h2>
         <div className="servicos">
           {
             products.map((procedimento, index) => (
