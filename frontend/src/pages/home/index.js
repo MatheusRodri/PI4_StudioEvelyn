@@ -6,20 +6,13 @@ export default function Home() {
   return (
     <div className="container">
       <header className="header">
-        <div className="lt">
-          {/* Agrupando a imagem e o texto */}
-          <div className="logo-container">
-            {/* Importando a imagem da pasta "public" */}
+          <nav className="nav">
+                <Link className='link' to="/Login">Login</Link>
+                <Link className='link' to="/Servicos">Serviços</Link>           
+            </nav>
             <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="logoGlambeauty" className='logo'/>
-          </div>
-        </div>
-        <nav className="nav">
-          <ul>
-            <li><Link to="/Login">Login</Link></li>
-            <li><Link to="/Servicos">Serviços</Link></li>
-          </ul>
-        </nav>
       </header>
+      
       <section className="hero">
         <div className="purple-box">
           <h2>FRETE GRÁTIS para todo Brasil</h2>
