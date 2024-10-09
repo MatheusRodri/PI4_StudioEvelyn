@@ -3,3 +3,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+body {
+    background: linear-gradient(to bottom, #e77cb5 25%, rgb(228, 189, 219) 25%);
+    background-color: pink; 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+

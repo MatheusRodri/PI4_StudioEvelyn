@@ -1,0 +1,28 @@
+/* Header.css */
+.header {
+    background-color: #e77cb5; /* Rosa escuro */
+    color: white; /* Cor do texto */
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 50px; /* Arredondar a parte inferior esquerda */
+    border-bottom-right-radius: 50px; /* Arredondar a parte inferior direita */
+}
+
+.header .logo {
+    max-width: 150px; /* Ajuste o tamanho do logo */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.header nav {
+    margin-top: 10px; /* Espaçamento acima da navegação */
+}
+
+.header nav a {
+    color: white; /* Cor dos links */
+    margin: 0 15px; /* Espaçamento entre os links */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.header nav a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
