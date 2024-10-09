@@ -1,28 +1,39 @@
 /* Header.css */
 .header {
-    background-color: #e77cb5; /* Rosa escuro */
-    color: white; /* Cor do texto */
-    padding: 20px;
-    text-align: center;
-    border-bottom-left-radius: 50px; /* Arredondar a parte inferior esquerda */
-    border-bottom-right-radius: 50px; /* Arredondar a parte inferior direita */
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: palevioletred;
+    background-color: #e77cb5;
 }
 
-.header .logo {
-    max-width: 150px; /* Ajuste o tamanho do logo */
-    height: auto; /* Mantém a proporção da imagem */
+img{
+  width: 900px;
+  height: 500px;
 }
 
-.header nav {
-    margin-top: 10px; /* Espaçamento acima da navegação */
+nav{
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  display: flex;
+  background-color: white;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  border-radius: 0 0 0 10px;
 }
 
-.header nav a {
-    color: white; /* Cor dos links */
-    margin: 0 15px; /* Espaçamento entre os links */
-    text-decoration: none; /* Remove o sublinhado */
+.link{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
 }
 
-.header nav a:hover {
-    text-decoration: underline; /* Sublinha ao passar o mouse */
+.link:hover{
+    color: palevioletred;
+    background: #F5F5F5;
 }
