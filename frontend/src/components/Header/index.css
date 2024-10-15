@@ -7,6 +7,7 @@
     flex-direction: column;
     color: palevioletred;
     background-color: #e77cb5;
+    border-radius: 0 0 60px 60px;
 }
 
 img{
