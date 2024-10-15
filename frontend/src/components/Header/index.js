@@ -9,7 +9,7 @@ export default function Header() {
             <nav>
                 <Link className='link' to="/">Home</Link>
                 <Link className='link' to="/produtos">Produtos</Link>
-                <Link className='link' to="/login">Atendimento</Link>
+                <Link className='link' to="/login">Login</Link>
             </nav>
         </header>
     );

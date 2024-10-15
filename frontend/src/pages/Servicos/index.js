@@ -20,6 +20,8 @@ function ProductPage() {
     { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/natural.png' }
   ];
 
+  // Renderização do componente
+  
   return (
     <div className="container">
       <div className="sessao">

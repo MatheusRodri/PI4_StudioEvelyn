@@ -1,6 +1,6 @@
-import UserConsultPage from "./pages/UserConsultPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
-import Home from "./pages/home/index.js";
+import Home from "./pages/Home/index.js";
+import Login from "./pages/Login/index.js";
 
 function App() {
   
@@ -8,7 +8,7 @@ function App() {
     <Router>
         <Routes> 
           <Route exact path="/" element={<Home/>} /> 
-          <Route path="/login" element={<UserConsultPage />} /> 
+          <Route path="/login" element={<Login/>} /> 
         </Routes>
     </Router>
   );
