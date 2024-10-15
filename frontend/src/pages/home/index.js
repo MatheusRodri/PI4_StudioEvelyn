@@ -8,6 +8,7 @@ export default function Home() {
     <div>
       <Header />
       {/* Conteúdo da página Home */}
+      
       <Footer/>
     </div>
   );
