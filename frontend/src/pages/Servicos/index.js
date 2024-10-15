@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'; // Importe o arquivo SCSS
 import CardProcedimento from '../../components/CardProcedimento';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 function ProductPage() {
   // Array de produtos
@@ -17,12 +19,15 @@ function ProductPage() {
     { name: 'Micropigmentacao', price: 'R$ 250,00', description: 'Micropigmentação fio a fio, modelo de micropigmentação mais natural do nosso catálogo!', category: 'micropigmentacao', image: '/images/micropigmentacao.png' },
     { name: 'Natural', price: 'R$ 100,00', description: 'Volume Fio a Fio, o modelo mais natural do nosso catálogo!', category: 'natural', image: '/images/natural.png' },
     { name: 'Shadow', price: 'R$ 280,00', description: 'Modelo de micropigmentação com o maior destaque do nosso catálogo!', category: 'shadow', image: '/images/shadow.png' },
-    { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/natural.png' }
+    { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' }
   ];
 
   // Renderização do componente
   
   return (
+    <>
+    <Header/>
+
     <div className="container">
       <div className="sessao">
         <div className="servicos">
@@ -46,6 +51,14 @@ function ProductPage() {
         {/* Conteúdo da Central de Atendimento */}
       </div>
     </div>
+
+
+
+
+
+        <Footer/>
+    </>
+    
   );
 }
 
