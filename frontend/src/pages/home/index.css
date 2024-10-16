@@ -1,1 +1,53 @@
-
+.container {
+    width: 100%;
+    padding: 20px;
+    background-color: #F9B0CA; 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Seção que contém as imagens e os textos */
+  .section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    width:80% ;
+    background-color: white; 
+    padding: 20px;
+  }
+  
+  /* Estilização das imagens */
+  .image {
+    width: 50%;
+    height: 300px;
+    border-radius: 30px;
+    margin: 20px;
+  }
+  
+  /* Estilização da seção de texto */
+  .textSection {
+    flex: 1;
+    padding: 20px;
+    width: 50px;
+  }
+  
+  /* Estilização dos headings */
+  .tituloh2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilização dos parágrafos */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
