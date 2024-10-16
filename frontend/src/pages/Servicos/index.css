@@ -4,13 +4,20 @@
     justify-content: space-between;
 }
 
-body {
+/* body {
     background: linear-gradient(to bottom, #e77cb5 25%, rgb(228, 189, 219) 25%);
     background-color: pink; 
     margin: 0; 
     font-family: Arial, sans-serif; 
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+} */
+
+.container{
+    background-image: linear-gradient( #f9b0ca, #f9eff3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 90px 50px 0 50px;
+
 }
-
-
