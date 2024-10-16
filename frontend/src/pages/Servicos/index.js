@@ -19,6 +19,9 @@ function ProductPage() {
     { name: 'Micropigmentacao', price: 'R$ 250,00', description: 'Micropigmentação fio a fio, modelo de micropigmentação mais natural do nosso catálogo!', category: 'micropigmentacao', image: '/images/micropigmentacao.png' },
     { name: 'Natural', price: 'R$ 100,00', description: 'Volume Fio a Fio, o modelo mais natural do nosso catálogo!', category: 'natural', image: '/images/natural.png' },
     { name: 'Shadow', price: 'R$ 280,00', description: 'Modelo de micropigmentação com o maior destaque do nosso catálogo!', category: 'shadow', image: '/images/shadow.png' },
+    { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' },
+    { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' },
+    { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' },
     { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' }
   ];
 
@@ -29,27 +32,16 @@ function ProductPage() {
     <Header/>
 
     <div className="container">
-      <div className="sessao">
-        <div className="servicos">
-          {
+      
+         <div className='servicos'>
+         {
             products.map((procedimento, index) => (
               <CardProcedimento key={index} procedimento={procedimento} />
             ))
           }
-        </div>
-    
-        <div className="alerta">
-          <p>
-            Atenção: Para comprar qualquer um de nossos produtos, entre em contato com a nossa 
-            <Link to="/atendimento#central-de-atendimento"> central de atendimento </Link>
-            para realizarmos seu cadastro em nossa plataforma! Informe seu nome, endereço, e-mail e o produto que deseja comprar.
-          </p>
-        </div>
-      </div>
-      {/* Seção da Central de Atendimento */}
-      <div id="central-de-atendimento" className="central-de-atendimento">
-        {/* Conteúdo da Central de Atendimento */}
-      </div>
+        
+         </div>
+  
     </div>
 
 
