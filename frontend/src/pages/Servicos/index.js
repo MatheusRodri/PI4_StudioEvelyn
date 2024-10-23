@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.css'; // Importe o arquivo SCSS
-import CardProcedimento from '../../components/CardProcedimento';
+import './index.css'; 
+import CardProcedimento from '../../components/cardProcedimento';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -20,9 +20,9 @@ function ProductPage() {
     { name: 'Natural', price: 'R$ 100,00', description: 'Volume Fio a Fio, o modelo mais natural do nosso catálogo!', category: 'natural', image: '/images/natural.png' },
     { name: 'Shadow', price: 'R$ 280,00', description: 'Modelo de micropigmentação com o maior destaque do nosso catálogo!', category: 'shadow', image: '/images/shadow.png' },
     { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' },
-    { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' },
-    { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' },
-    { name: 'Russo', price: 'R$ 150,00', description: 'Volume o russo, o segundo modelo mais volumoso do nosso catálogo!', category: 'russo', image: '/images/russo.png' }
+    { name: 'Completo', price: 'R$ 200,00', description: 'O combo mais completo de nosso catálogo! Cílios, sobrancelha e micropigmentação!', category: 'completo', image: '/images/completo.png' },
+    { name: 'Kardashian', price: 'R$ 150,00', description: 'Volume estilo Kim Kardashian!', category: 'kardashian', image: '/images/kardashian.png' },
+    { name: 'Labio Natural', price: 'R$ 250,00', description: 'Micropigmentação labial mais natural', category: 'labionatural', image: '/images/labionatural.png' }
   ];
 
   // Renderização do componente
