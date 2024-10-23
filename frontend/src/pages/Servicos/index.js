@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< Updated upstream
 import './index.css'; 
+=======
+import './index.css'; // Importe o arquivo SCSS
+>>>>>>> Stashed changes
 import CardProcedimento from '../../components/cardProcedimento';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
