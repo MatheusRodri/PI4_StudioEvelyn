@@ -25,17 +25,17 @@ export default function Login() {
   return (
     <>
     <Header />
-    <div className='login-page'>
-      <div className='login-container'>
-        <h2 style={{ fontFamily: 'Arial, sans-serif' }}>LOGIN</h2>
-        <form id='login-form' onSubmit={handleLogin}>
-          <input type='email' id='email' name='email' placeholder='Endereço de E-mail' required /><br />
-          <input type='password' id='password' name='password' placeholder='Senha' required /><br />                    
-          <input type='submit' value='Entrar' />
-        </form>
-        <Link to="/registro">Registrar</Link>
+      <div className='login-page'>
+        <div className='login-container'>
+          <h2 style={{ fontFamily: 'Arial, sans-serif' }}>LOGIN</h2>
+          <form id='login-form' onSubmit={handleLogin}>
+            <input type='email' id='email' name='email' placeholder='Endereço de E-mail' required /><br />
+            <input type='password' id='password' name='password' placeholder='Senha' required /><br />                    
+            <input type='submit' value='Entrar' />
+          </form>
+          <Link to="/registro">Registrar</Link>
+        </div>
       </div>
-    </div>
     <Footer/>
     </>
   );
