@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css'; 
-import CardProcedimento from '../../components/CardProcedimento/index.js';
+import CardProcedimento from '../../components/cardProcedimento/index.js';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 

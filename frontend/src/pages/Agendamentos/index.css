@@ -1,0 +1,27 @@
+.detalhe-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .detalhe-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .detalhe-container p {
+    font-size: 18px;
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .detalhe-container strong {
+    color: #333;
+  }
+  
