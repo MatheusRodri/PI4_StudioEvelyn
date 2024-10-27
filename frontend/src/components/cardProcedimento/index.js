@@ -20,7 +20,6 @@ export default function CardProcedimento({ procedimento }) {
           <span>{procedimento.price}</span>
         </>
       )}
-      
     </div>
   );
 }
