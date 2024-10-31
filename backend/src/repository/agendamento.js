@@ -18,9 +18,10 @@ export async function exibirAgendamentos() {
 // Rota para criar um novo agendamento
 export async function criarAgendamento(agendamento) {
     try {
-        const comando = `INSERT INTO AGENDAMENTOS (CPF, NOME, DATA, HORA, PROCEDIMENTO, TP_PAGAMENTO) VALUES (?, ?, ?, ?, ?, ?)`;
-        const valores = [agendamento.CPF, agendamento.NOME, agendamento.DATA, agendamento.HORA, agendamento.PROCEDIMENTO, agendamento.TP_PAGAMENTO];
+        const comando = `INSERT INTO AGENDAMENTOS (CPF, NOME, DATA, HORA,VALOR,PROCEDIMENTO, TP_PAGAMENTO) VALUES (?, ?, ?,?, ?, ?, ?)`;
+        const valores = [agendamento.CPF, agendamento.NOME, agendamento.DATA, agendamento.HORA, agendamento.VALOR,agendamento.PROCEDIMENTO, agendamento.TP_PAGAMENTO];
         const resp = await con.query(comando, valores);
+    
         return { id: resp.insertId, ...agendamento }; 
     } catch (error) {
         throw new Error(error.message);
@@ -39,10 +40,13 @@ export async function excluirAgendamento(id) {
 }
 
 // Rota para exibir os agendamentos de um cliente
-export async function exibirAgendamentoCliente({cpf}) {
+export async function exibirAgendamentoCliente(cpf) {
     try {
         const query = `SELECT * FROM AGENDAMENTOS WHERE CPF = ?`;
-        let resp = await con.query(query, [cpf]);
+
+        console.log(cpf)
+        let resp = await con.query(query, cpf );
+        console.log(resp[0])
         return resp[0];
     }
     catch (error) {
