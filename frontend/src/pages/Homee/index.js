@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      
+
     <div className="container">
   {/* Seção da primeira imagem com texto */}
   <div className="section">
@@ -20,7 +20,7 @@ export default function Home() {
     <div className="textSection">
       <h2 className="tituloh2">Heading</h2>
    
-      <p>
+            <p className='vw-plugin-top-wrapper'>
         Excepteur efficient emerging, minim veniam anim aute carefully curated
         Ginza conversation exquisite perfect nostrud nisi intricate Content.
       </p>
