@@ -8,18 +8,11 @@ CREATE TABLE AGENDAMENTOS (
     NOME VARCHAR(255) NOT NULL,
     DATA DATE NOT NULL,
     HORA TIME NOT NULL,
+    VALOR float not NULL,
     PROCEDIMENTO VARCHAR(255) NOT NULL,
     TP_PAGAMENTO VARCHAR (255) NOT NULL 
 );
 
-
-
-INSERT INTO AGENDAMENTOS (CPF, NOME, DATA, HORA, PROCEDIMENTO, TP_PAGAMENTO) VALUES
-('111.111.111-11', 'João Silva', '2024-09-30', '09:00:00', 'Sobrancelha', 'ONLINE'),
-('111.111.111-11', 'João Silva', '2024-09-30', '09:00:00', 'Cílios', 'ONLINE'),
-('222.222.222-22', 'Maria Oliveira', '2024-10-01', '14:30:00', 'Cílios', 'PRESENCIAL'),
-('222.222.222-22', 'Maria Oliveira', '2024-10-01', '15:00:00', 'Sobrancelha', 'PRESENCIAL'),
-('333.333.333-33', 'Pedro Santos', '2024-10-02', '11:00:00', 'Sobrancelha','ONLINE');
 
 
 SELECT 
@@ -34,3 +27,4 @@ FROM AGENDAMENTOS
 WHERE DATA = '2024-09-30';
 
 
+select * from agendamentos;
