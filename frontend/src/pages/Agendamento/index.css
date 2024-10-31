@@ -48,18 +48,36 @@
   
   .servicos-list {
     list-style: none;
-    padding: 0;
-  }
-  
-  .servicos-list li {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #333;
+    flex-wrap: wrap;
+
   }
   
-  .servicos-list input[type="checkbox"] {
-    margin-right: 8px;
-  }
+.servicos-list li {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
   
+ .servicos-list input[type="checkbox"] {
+ margin-right: 8px; /* Espaçamento entre o checkbox e o texto */
+  vertical-align: middle;
+}
+  
+
+.agendamento-container .servicos-list label { 
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 20px;
+}
+
+.servicos-list2 {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+}
