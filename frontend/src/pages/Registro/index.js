@@ -1,5 +1,5 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { useState } from 'react';
@@ -13,6 +13,8 @@ export default function Registro() {
   const [password, setPassword] = useState('');
   const [nome, setNome] = useState('');
   const [cpf, setCpf] = useState('');
+
+  const nav = useNavigate()
   
 
 async function handleRegister(e) {
@@ -28,6 +30,8 @@ async function handleRegister(e) {
           email: email,
           permissao: 0
         })
+        alert('Usuário cadastrado com sucesso!')
+        nav("/login")
       }
 
     }catch(e){

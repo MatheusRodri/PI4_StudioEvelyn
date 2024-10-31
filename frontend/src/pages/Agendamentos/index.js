@@ -52,11 +52,12 @@ function AgendamentoDetalhe() {
   }, []);
 
   useEffect(() => {
-    if (usuario.permissao == 1) {
+    if (usuario.permissao === 1) {
       carregarProcedimentosTodos();
     } else {
       carregarUsuarios()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [usuario]);
 
   return (
