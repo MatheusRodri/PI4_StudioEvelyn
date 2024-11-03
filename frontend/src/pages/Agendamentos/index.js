@@ -80,7 +80,7 @@ function AgendamentoDetalhe() {
         })
       }
       <button>
-        <Link to="/agendamento">Voltar</Link>
+        <Link to="/agendamento">Agendar</Link>
       </button>
       <Footer />
     </div>
