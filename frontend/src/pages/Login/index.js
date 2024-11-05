@@ -28,7 +28,7 @@ export default function Login() {
   return (
     <>
     <Header />
-      <div className='login-page'>
+      <main className='login-page'>
         <div className='login-container'>
           <h2 style={{ fontFamily: 'Arial, sans-serif' }}>LOGIN</h2>
           <form id='login-form' onSubmit={handleLogin}>
@@ -38,7 +38,7 @@ export default function Login() {
           </form>
           <Link to="/registro">Registrar</Link>
         </div>
-      </div>
+      </main>
     <Footer/>
     </>
   );
