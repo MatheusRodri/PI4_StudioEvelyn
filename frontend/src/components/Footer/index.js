@@ -4,11 +4,11 @@ import './index.css';
 
 export default function Footer(){
     return (
-        <div id="footer">
-            <div id="text">
+        <footer id="footer">
+            <section id="text">
                 <p>Desenvolvido por: Agatha Vitoria, Emily, Felipe e Matheus</p>
-            </div>
-            <div id="redes">
+            </section>
+            <section id="redes">
                 <Link className="icon" href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                     <FaFacebook />
                 </Link>
@@ -18,7 +18,7 @@ export default function Footer(){
                 <Link className="icon" href="#" target="_blank" rel="noreferrer">
                     <FaWhatsapp/>
                 </Link>
-            </div>
-        </div>
+            </section>
+        </footer>
     )
 }

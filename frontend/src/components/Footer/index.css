@@ -27,10 +27,9 @@
     color: black;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 450pxpx) {
     #footer {
-      padding: 20px;
-      text-align: center;
-      width: 800px;
+      display: flex;
+      flex-direction: column;
     }
 }
