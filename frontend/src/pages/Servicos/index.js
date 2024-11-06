@@ -15,7 +15,7 @@ function ProductPage() {
     <>
     <Header/>
 
-    <div className="container">
+    <div className="servicos-container">
       
          <div className='servicos'>
          {
