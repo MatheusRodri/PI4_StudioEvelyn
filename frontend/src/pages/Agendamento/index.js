@@ -5,11 +5,22 @@ import './index.css';
 import servicos from '../../services/servicos';
 import { auth, db } from '../../services/firebaseConfig';
 import { doc,getDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 function Agendamento() {
+
+  const dataBrasilia = new Date().toLocaleString('pt-BR');
+  let dataComHora = new Date(dataBrasilia);
+  dataComHora.setHours(dataComHora.getHours() - 2 );
+  const horarioBrasileiro = dataComHora.toISOString().split('T')[1].slice(0, 5);
+
+  const nav = useNavigate()
+  
+ 
+
   // Estados para data, horário e serviços selecionados.
-  const [data, setData] = useState('');
-  const [horario, setHorario] = useState('');
+  const [data, setData] = useState(new Date().toISOString().split('T')[0]);
+  const [horario, setHorario] = useState(horarioBrasileiro);
   const [servicosSelecionados, setServicosSelecionados] = useState([]);
   const [pagamento, setPagamento] = useState('');
   const [usuario, setUsuario] = useState(null);
@@ -53,9 +64,9 @@ function Agendamento() {
           TP_PAGAMENTO: pagamento
       }),
       });
-      console.log(servicosSelecionados)
 
       alert('Agendamento realizado com sucesso!');
+      nav('/agendamentos');
 
     } catch (error) {
       console.error('Erro ao agendar:', error);
@@ -115,9 +126,14 @@ function Agendamento() {
             </li>
           ))}
         </ul>
-        
+        {
+          total >= 0 && (
+            <p>Total: R$ {total.toFixed(2)}</p>
+          )
+        }
         <label for="servicos">Forma de pagamento</label>
         <select id="servicos" name="servicos" value={pagamento} onChange={formaPagamento}>
+          <option value=""> </option>
           <option value="Pix">Pix</option>
           <option value="Dinheiro">Dinheiro</option>
           <option value="Cartão de debito">Cartão de debito</option>

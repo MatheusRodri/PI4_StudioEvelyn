@@ -1,3 +1,31 @@
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+     height: content
+}
+
+.main h2{
+  color: #333;
+}
+.nomeEbotao{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+.nameUser{
+  font-size: 20px;
+  margin: 0;
+}
+
+.semAgendamentoText{
+  font-size: 50px;
+  color: #333;
+  margin: 0;
+  margin-top: 80px;
+}
+
 .detalhe-container {
     width: 80%;
     max-width: 600px;
@@ -23,5 +51,9 @@
   
   .detalhe-container strong {
     color: #333;
+  }
+
+  .detalhe-container:last-child {
+    margin-bottom: 50px;
   }
   

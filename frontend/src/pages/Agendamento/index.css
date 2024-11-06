@@ -49,6 +49,8 @@
   .servicos-list {
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 
   }
@@ -80,4 +82,10 @@
   display: flex;
   flex-wrap: wrap;
   padding: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .servicos-list{
+    flex-direction: column;
+  }
 }
