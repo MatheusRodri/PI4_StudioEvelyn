@@ -29,7 +29,7 @@ export default function Login() {
     <>
     <Header />
       <main className='login-page'>
-        <div className='login-container'>
+        <section className='login-container'>
           <h2 style={{ fontFamily: 'Arial, sans-serif' }}>LOGIN</h2>
           <form id='login-form' onSubmit={handleLogin}>
             <input onChange={(e)=>setEmail(e.target.value)} value={email}  type='email' id='email' name='email' placeholder='Endereço de E-mail' required /><br />
@@ -37,7 +37,7 @@ export default function Login() {
             <input type='submit' value='Entrar' />
           </form>
           <Link to="/registro">Registrar</Link>
-        </div>
+        </section>
       </main>
     <Footer/>
     </>
