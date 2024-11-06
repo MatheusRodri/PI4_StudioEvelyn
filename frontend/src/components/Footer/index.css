@@ -26,3 +26,11 @@
 .icon{
     color: black;
 }
+
+@media screen and (max-width: 700px) {
+    #footer {
+      padding: 20px;
+      text-align: center;
+      width: 800px;
+    }
+}

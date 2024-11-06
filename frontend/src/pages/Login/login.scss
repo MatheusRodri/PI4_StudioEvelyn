@@ -79,15 +79,35 @@ a:hover {
   text-decoration: underline;
 }
 
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
   .login-container {
-    background-color: #fff;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 380px;
+    
+  }
+
+  .login-page {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    }
+  
+} 
+
+
+@media screen and (max-width: 400px) {
+  .login-container {
+    background-color: #ffffff;
+    padding: 90px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 380px;
+    right: 50%;
   }
 
   .login-page {
@@ -97,3 +117,4 @@ a:hover {
     }
   
 } 
+
