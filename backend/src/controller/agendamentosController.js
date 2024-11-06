@@ -25,6 +25,18 @@ servidor.post('/agendamentos', async (req, res) => {
     }
 });
 
+servidor.get('/agendamentos/cliente/:cpf', async (req, res) => {
+    try {
+        const cpf = req.params.cpf;
+        console.log(cpf)
+        const agendamentos = await exibirAgendamentoCliente(cpf);
+        res.status(200).json(agendamentos);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 // Rota para excluir um agendamento
 servidor.delete('/agendamentos/:id', async (req, res) => {
     try {
@@ -37,16 +49,6 @@ servidor.delete('/agendamentos/:id', async (req, res) => {
 });
 
 // Rota para exibir os agendamentos de um cliente
-servidor.get('/agendamentos/cliente/:cpf', async (req, res) => {
-    try {
-        const cpf = req.params.cpf;
-        console.log(cpf)
-        const agendamentos = await exibirAgendamentoCliente(cpf);
-        res.status(200).json(agendamentos);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
 
 
 servidor.get('/agendamentos/data', async (req, res) => {

@@ -28,6 +28,20 @@ export async function criarAgendamento(agendamento) {
     }
 }
 
+export async function exibirAgendamentoCliente(cpf) {
+    try {
+        const query = `SELECT * FROM AGENDAMENTOS WHERE CPF = ?`;
+
+        console.log(cpf)
+        let resp = await con.query(query, cpf);
+        console.log(resp[0])
+        return resp[0];
+    }
+    catch (error) {
+        throw new Error(error.message);
+    }
+}
+
 // Rota para excluir um agendamento
 export async function excluirAgendamento(id) {
     try {
@@ -40,19 +54,7 @@ export async function excluirAgendamento(id) {
 }
 
 // Rota para exibir os agendamentos de um cliente
-export async function exibirAgendamentoCliente(cpf) {
-    try {
-        const query = `SELECT * FROM AGENDAMENTOS WHERE CPF = ?`;
 
-        console.log(cpf)
-        let resp = await con.query(query, cpf );
-        console.log(resp[0])
-        return resp[0];
-    }
-    catch (error) {
-        throw new Error(error.message);
-    }
-}
 
 // Rota para exibir os agendamentos de um dia
 export async function exibirAgendamentoData(agendamento) {
