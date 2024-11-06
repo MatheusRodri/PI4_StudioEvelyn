@@ -45,10 +45,10 @@ async function handleRegister(e) {
   return (
     <>
     <Header />
-    <div className='login-page'>
-      <div className='login-container'>
+    <main className='register-page'>
+      <section className='register-container'>
         <h2 style={{ fontFamily: 'Arial, sans-serif' }}>REGISTRO</h2>
-          <form id='login-form' onSubmit={handleRegister}>
+          <form id='register-form' onSubmit={handleRegister}>
             <input onChange={(e) => setNome(e.target.value)} value={nome} type='nome' id='nome' name='nome' placeholder='Nome'/><br />
             <input onChange={(e) => setCpf(e.target.value)} value={cpf} type='cpf' id='cpf' name='cpf' placeholder='CPF' /><br />
             <input onChange={(e) => setEmail(e.target.value)} value={email} type='email' id='email' name='email' placeholder='Endereço de E-mail' /><br />
@@ -56,8 +56,8 @@ async function handleRegister(e) {
           <input type='submit' value='REGISTRAR' />
         </form>
         <Link to="/login">Já tem conta?</Link>
-      </div>
-    </div>
+      </section>
+    </main>
     <Footer/>
     </>
   );
