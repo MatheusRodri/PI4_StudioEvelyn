@@ -5,11 +5,22 @@ import './index.css';
 import axios from 'axios';
 import { auth, db } from '../../services/firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function AgendamentoDetalhe() {
   const [usuario, setUsuario] = useState([]);
-  const [dados, setDados] = useState([])
+  const [dados, setDados] = useState([]);
+
+  const nav = useNavigate();
+
+  document.addEventListener('keydown', function (event) {
+
+    if (event.key === 'a') {
+      nav('/agendamento');
+      event.preventDefault();
+      event.stopPropagation();
+    } 
+  });
 
   // Função para buscar os detalhes do usuário logado
   const fetchUserDetails = async () => {
