@@ -2,10 +2,10 @@ import React from 'react';
 import './index.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
 
-  // document.addEventListener('')
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function Home() {
             </p>
           </article>
           <img
-            src="images/home2.png"
+            src="images/ho.png"
             alt="Imagem: Destaque de um procedimento"
             className="image"
           />

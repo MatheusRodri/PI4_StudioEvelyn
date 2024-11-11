@@ -5,11 +5,13 @@ import Servicos from "./pages/Servicos/index.js"
 import Registro from "./pages/Registro/index.js";
 import Agendamento from "./pages/Agendamento/index.js";
 import Agendamentos from "./pages/Agendamentos/index.js";
+import KeydownShortcuts from "./func/key.js";
 
 function App() {
   
   return (
     <Router>
+       <KeydownShortcuts/>
         <Routes> 
           <Route exact path="/" element={<Home/>} /> 
           <Route path="/login" element={<Login />} />
