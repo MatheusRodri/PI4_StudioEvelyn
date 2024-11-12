@@ -43,7 +43,7 @@ export default function Home() {
             </p>
           </article>
           <img
-            src="images/ho.png"
+            src="images/home2.png"
             alt="Imagem: Destaque de um procedimento"
             className="image"
           />
