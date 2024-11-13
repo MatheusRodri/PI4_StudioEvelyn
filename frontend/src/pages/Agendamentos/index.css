@@ -41,7 +41,7 @@
 }
 
 /* Botão com estilo elegante */
-button {
+.buttonAgendar {
   background: linear-gradient(135deg, #ff99cc, #ff66b2); /* Gradiente suave de rosa claro a rosa escuro */
   color: white;
   font-size: 1.2rem;
@@ -59,7 +59,7 @@ button {
 }
 
 /* Efeito hover */
-button:hover {
+.buttonAgendar:hover {
   background: linear-gradient(135deg, #ff66b2, #ff99cc); /* Inverte o gradiente ao passar o mouse */
   transform: translateY(-3px); /* Elevação suave */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Aumenta a sombra ao passar o mouse */

@@ -3,23 +3,24 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup, updateCurrentUser } from 'firebase/auth';
 import { auth, db } from '../../services/firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
-
+import { FaFacebook, FaGoogle } from 'react-icons/fa';
+import axios from 'axios';
 
 export default function Registro() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nome, setNome] = useState('');
-  const [cpf, setCpf] = useState('');
+  
 
   const nav = useNavigate()
 
 
   async function handleRegister(e) {
     e.preventDefault()
-    if (!email || !password || !nome || !cpf) {
+    if (!email || !password || !nome) {
       alert('Preencha todos os campos')
       return
     } else if (password.length < 6) {
@@ -30,14 +31,13 @@ export default function Registro() {
         const user = auth.currentUser;
         if (user) {
           await setDoc(doc(db, 'users', user.uid), {
-            nome: nome,
-            cpf: cpf,
+            displayName: nome,
             email: email,
             permissao: 0
           })
-          alert('Usuário cadastrado com sucesso!')
-          nav("/login")
         }
+          alert('Usuário cadastrado com sucesso!')
+        nav("/login")
 
       } catch (e) {
         console.log(e)
@@ -45,27 +45,34 @@ export default function Registro() {
     }
   }
 
-  const formatarCPF = (valor) => {
-    // Remover todos os caracteres não numéricos
-    valor = valor.replace(/\D/g, '');
+  async function handleLoginGoogle() {
+    try {
+      const provider = new GoogleAuthProvider();
 
-    // Adicionar o formato XXX.XXX.XXX-XX
-    if (valor.length <= 3) {
-      return valor;
-    } else if (valor.length <= 6) {
-      return valor.replace(/(\d{3})(\d{1,})/, '$1.$2');
-    } else if (valor.length <= 9) {
-      return valor.replace(/(\d{3})(\d{3})(\d{1,})/, '$1.$2.$3');
-    } else {
-      return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{1,})/, '$1.$2.$3-$4');
+      const result = await signInWithPopup(auth, provider);
+
+      console.log(result.user);
+
+
+    } catch (error) {
+
     }
+  }
+
+  async function handleLoginFacebook() {
+    try {
+      const provider = new FacebookAuthProvider();
+
+      const result = await signInWithPopup(auth, provider);
+
+      console.log(result.user);
 
 
-  };
+    } catch (error) {
 
-
-
-
+    }
+  }
+  
   return (
     <>
       <Header />
@@ -74,11 +81,27 @@ export default function Registro() {
           <h2 style={{ fontFamily: 'Arial, sans-serif' }}>REGISTRO</h2>
           <form id='register-form' onSubmit={handleRegister}>
             <input onChange={(e) => setNome(e.target.value)} value={nome} type='nome' id='nome' name='nome' placeholder='Nome' /><br />
-            <input maxLength={14} onChange={(e) => setCpf(formatarCPF(e.target.value)) } value={cpf} type='cpf' id='cpf' name='cpf' placeholder='CPF' /><br />
             <input onChange={(e) => setEmail(e.target.value)} value={email} type='email' id='email' name='email' placeholder='Endereço de E-mail' /><br />
             <input onChange={(e) => setPassword(e.target.value)} value={password} type='password' id='password' name='password' placeholder='Senha' /><br />
             <input type='submit' value='REGISTRAR' />
           </form>
+          <p>ou</p>
+          <div className='redes'>
+            
+            <button className='google-button button-midias' onClick={handleLoginGoogle}>
+              <span className='google-icon'>
+                <FaGoogle />
+              </span>
+              
+              Registrar com Google
+            </button>
+            <button className='facebook-button button-midias' onClick={handleLoginFacebook}>
+              <span className='facebook-icon'>
+                <FaFacebook />
+              </span>
+              Registrar com Facebook
+            </button>
+          </div>
           <Link to="/login">Já tem conta?</Link>
         </section>
       </main>
