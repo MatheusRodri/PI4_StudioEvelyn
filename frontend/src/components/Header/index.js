@@ -1,5 +1,6 @@
+//import React from 'react' e o css do componente e o Link do react-router-dom
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './index.css'; 
 
 export default function Header() {

@@ -82,9 +82,11 @@ a:hover {
 
 @media screen and (max-width: 750px) {
   .login-page{
-    height: calc(100vh - 15rem);
+    height: calc(100vh);
     margin: 0 1rem;
     background-image: none;
-
+  }
+  .redes{
+    flex-direction: column;
   }
 }

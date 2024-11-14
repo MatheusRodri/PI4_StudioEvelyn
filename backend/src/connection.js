@@ -1,8 +1,10 @@
+// Importando o pacote mysql2/promise e o pacote dotenv
 import mysql from 'mysql2/promise';
 import 'dotenv/config';
 
 let con;
 
+// Conectando ao banco de dados
 try {
     con = await mysql.createConnection({
         host: process.env.MYSQL_HOST,

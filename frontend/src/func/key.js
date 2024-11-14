@@ -1,7 +1,11 @@
-// src/components/KeydownShortcuts.js
-import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';  // useNavigate no lugar de useHistory
+// Este componente é responsável por adicionar atalhos de teclado para navegação entre as páginas da aplicação.
 
+// Importa o hook useEffect do React e os hooks useLocation e useNavigate do react-router-dom
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom'; 
+
+
+// Define o componente KeydownShortcuts
 const KeydownShortcuts = () => {
     const location = useLocation(); // Acessa a URL atual
     const navigate = useNavigate(); // Agora usamos useNavigate no lugar de useHistory

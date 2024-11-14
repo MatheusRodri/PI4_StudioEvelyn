@@ -1,5 +1,5 @@
-import 'dotenv/config';
 // Importação das funcionalidades do express, cors e do controller
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import agendamentoController from './controller/agendamentosController.js';
@@ -11,8 +11,10 @@ servidor.use(cors());
 servidor.use(express.json());
 servidor.use(agendamentoController);
 
+// Criação de uma instância do Stripe
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+// Rota para criar uma sessão de checkout
 servidor.post('/create-checkout-session', async (req, res) => {
   console.log(req.body);
 
@@ -36,8 +38,8 @@ servidor.post('/create-checkout-session', async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       line_items: items,
       mode: 'payment',
-      success_url: `http://localhost:3000/agendamento?success=true`,
-      cancel_url: `http://localhost:3000/agendamento?canceled=true`,
+      success_url: `http://localhost:3000/agendamento/concluido?success=true`,
+      cancel_url: `http://localhost:3000/agendamento/concluido?canceled=true`,
     });
 
     res.send({ url: session.url });
@@ -52,6 +54,7 @@ servidor.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Erro interno do servidor');
 });
+
 
 const port = process.env.PORT || 3000;
 servidor.listen(port, () => console.log(`API rodando na porta ${port}`));

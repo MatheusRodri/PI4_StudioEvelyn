@@ -1,3 +1,4 @@
+//importa o Link do react-router-dom e os icones do react-icons e o css do componente
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import './index.css';

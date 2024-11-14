@@ -1,3 +1,4 @@
+// importa useState do react e o css do componente
 import { useState } from 'react';
 import './style.css'
 

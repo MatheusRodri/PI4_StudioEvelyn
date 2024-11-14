@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+// importe de bibliotecas
+import React, { useEffect, useState, useMemo, useLayoutEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -8,27 +9,25 @@ import { auth, db } from '../../services/firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 import axios from 'axios';
 
+// função Agendamento
 function Agendamento() {
+  console.log("Componente Agendamento montado");
+
+  // variáveis
   const dataBrasilia = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
   let dataComHora = new Date(dataBrasilia);
   const horarioBrasileiro = dataComHora.toTimeString().split(' ')[0].slice(0, 5);
-
   const nav = useNavigate();
   const [searchParams] = useSearchParams();
-
   const [dataMarca, setdataMarca] = useState(new Date().toISOString().split('T')[0]);
   const [horario, setHorario] = useState(horarioBrasileiro);
   const [servicosSelecionados, setServicosSelecionados] = useState([]);
-  const [pagamento, setPagamento] = useState('');
   const [usuario, setUsuario] = useState(null);
-  const [total, setTotal] = useState(0);
   const [precosSelecionados, setPrecosSelecionados] = useState([]);
-  const [isAgendarCalled, setIsAgendarCalled] = useState(false); // Novo estado
+  const [isAgendarCalled, setIsAgendarCalled] = useState(false);
+  const [initialLoad, setInitialLoad] = useState(false); // Novo estado
 
-  const formaPagamento = (e) => {
-    setPagamento(e.target.value);
-  }
-
+  // função para buscar detalhes do usuário no firebase
   const fetchUserDetails = async () => {
     const cachedUser = JSON.parse(localStorage.getItem('usuario'));
     if (cachedUser) {
@@ -61,19 +60,34 @@ function Agendamento() {
     }
   };
 
+  // useEffect para buscar detalhes do usuário
   useEffect(() => {
+    fetchUserDetails();
+  }, []); // Rodar apenas uma vez, na montagem
+
+  // useEffect para lidar com a lógica de agendamento
+  useEffect(() => {
+    console.log("Componente  atualizado");
+    if (initialLoad) {
+      return; // Evitar execução na montagem
+    }
+
+    console.log("Eu recarreguei");
     const status = searchParams.get('success');
     if (status === 'true' && !isAgendarCalled) {
-      console.log('Pagamento realizado com sucesso');
+      console.log('Pagamento realizado com sucesso', isAgendarCalled);
+      setIsAgendarCalled(true); // Marque como chamado antes de chamar handleAgendar
       handleAgendar();
-      setIsAgendarCalled(true); // Marque como chamado
     } else if (status === 'false') {
       alert('Erro ao realizar pagamento');
-    } else {
-      fetchUserDetails();
     }
-  }, [searchParams, isAgendarCalled]);
 
+    console.log("Antes", initialLoad);
+    setInitialLoad(true); // Definir como falso após a primeira execução
+    console.log("Depois", initialLoad);
+  }, [searchParams, initialLoad, isAgendarCalled]); // Adicionar initialLoad e isAgendarCalled como dependências
+
+  // função para agendar e salvar no banco de dados
   const handleAgendar = async () => {
     const cachedProcedimento = JSON.parse(localStorage.getItem('procedimento'));
 
@@ -91,25 +105,24 @@ function Agendamento() {
           HORA: cachedProcedimento.horario,
           VALOR: cachedProcedimento.total,
           PROCEDIMENTO: cachedProcedimento.procedimentos,
-          TP_PAGAMENTO: cachedProcedimento.pagamento
+          TP_PAGAMENTO: "Online"
         }),
       });
 
       alert('Agendamento realizado com sucesso!');
-      nav('/agendamentos');
-
+      setIsAgendarCalled(true);
+      // nav('/agendamentos');
     } catch (error) {
       console.error('Erro ao agendar:', error);
     }
   };
 
-  useEffect(() => {
-    const total = servicosSelecionados.reduce((acc, servicoName, index) => {
+  // useMemo para calcular o total
+  const total = useMemo(() => {
+    return servicosSelecionados.reduce((acc, servicoName, index) => {
       const price = precosSelecionados[index] || 0;
       return acc + price;
     }, 0);
-    setTotal(total);
-    console.log(total);
   }, [servicosSelecionados, precosSelecionados]);
 
   const handleFinishCompra = async () => {
@@ -118,7 +131,7 @@ function Agendamento() {
         servicos: servicosSelecionados,
         precos: precosSelecionados,
         total: total,
-        pagamento: pagamento
+        pagamento: 'Online',
       };
 
       const proce = servicosSelecionados.join(', ');
@@ -130,11 +143,10 @@ function Agendamento() {
         horario: horario,
         total: total,
         procedimentos: proce,
-        pagamento: pagamento
+        pagamento: 'Online',
       }
       console.log("check", check);
       localStorage.setItem('procedimento', JSON.stringify(check));
-
 
       const { data } = await axios.post(process.env.REACT_APP_API_URL + "/create-checkout-session", {
         procedimentos
@@ -145,6 +157,7 @@ function Agendamento() {
       console.error('Erro ao finalizar compra:', error);
     }
   }
+
 
   return (
     <div>
@@ -198,16 +211,9 @@ function Agendamento() {
             <p>Total: R$ {total.toFixed(2)}</p>
           )
         }
-        <label htmlFor="servicos">Forma de pagamento</label>
-        <select id="servicos" name="servicos" value={pagamento} onChange={formaPagamento}>
-          <option value=""> </option>
-          <option value="Pix">Pix</option>
-          <option value="Dinheiro">Dinheiro</option>
-          <option value="Cartão de debito">Cartão de debito</option>
-          <option value="Cartão de credito">Cartão de credito</option>
-        </select>
+        <button onClick={handleFinishCompra}>Agendar</button>
       </div>
-      <button onClick={handleFinishCompra}>Agendar</button>
+
       <Footer />
     </div>
   );

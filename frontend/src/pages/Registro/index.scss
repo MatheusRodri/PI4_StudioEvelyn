@@ -82,7 +82,7 @@ a:hover {
 .redes {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: -10px;
 }
 
 
@@ -119,9 +119,8 @@ a:hover {
 
 @media screen and (max-width: 750px) {
   .register-page {
-    height: calc(100vh - 5rem);
+    height: calc(100vh);
     margin: 0 1rem;
     background-image: none;
-
   }
 }

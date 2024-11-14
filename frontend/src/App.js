@@ -6,6 +6,7 @@ import Registro from "./pages/Registro/index.js";
 import Agendamento from "./pages/Agendamento/index.js";
 import Agendamentos from "./pages/Agendamentos/index.js";
 import KeydownShortcuts from "./func/key.js";
+import Concluido from "./pages/Concluido/index.js";
 
 function App() {
   
@@ -18,7 +19,8 @@ function App() {
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/agendamento" element={<Agendamento />} />
-          <Route path="/agendamentos" element={<Agendamentos />} />
+        <Route path="/agendamentos" element={<Agendamentos />} />
+        <Route path="/agendamento/concluido" element={<Concluido />} />
         
         </Routes>
     </Router>

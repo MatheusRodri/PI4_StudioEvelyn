@@ -45,14 +45,8 @@ export default function Login() {
   async function handleLoginFacebook() {
     try {
       const provider = new FacebookAuthProvider();
-
       const result = await signInWithPopup(auth, provider);
-
       nav('/agendamentos');
-
-
-
-
     } catch (error) {
 
     }

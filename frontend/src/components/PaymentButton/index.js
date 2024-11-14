@@ -1,3 +1,6 @@
+// Este componente é responsável por renderizar o formulário de pagamento.
+
+// Importa o React e a função loadStripe do pacote @stripe/stripe-js e o componente Elements do pacote @stripe/react-stripe-js.
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';

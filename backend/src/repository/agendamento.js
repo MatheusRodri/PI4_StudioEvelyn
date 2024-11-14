@@ -1,7 +1,7 @@
 import e from "cors";
 import con from "../connection.js";
 
-// Rota para exibir todos os agendamentos
+// Função para exibir todos os agendamentos
 export async function exibirAgendamentos() {
     try {
         let comando = `SELECT * FROM agendamentos`;
@@ -16,7 +16,7 @@ export async function exibirAgendamentos() {
     }
 }
 
-// Rota para criar um novo agendamento
+// Função para criar um novo agendamento
 export async function criarAgendamento(agendamento) {
     try {
         
@@ -33,6 +33,7 @@ export async function criarAgendamento(agendamento) {
     }
 }
 
+// Função para exibir um agendamento de um cliente por e-mail
 export async function exibirAgendamentoCliente(email) {
     try {
         const query = `SELECT * FROM AGENDAMENTOS WHERE EMAIL = ?`;
@@ -40,32 +41,6 @@ export async function exibirAgendamentoCliente(email) {
         console.log("email", email);
         let resp = await con.query(query, email);
         console.log(resp[0])
-        return resp[0];
-    }
-    catch (error) {
-        throw new Error(error.message);
-    }
-}
-
-// Rota para excluir um agendamento
-export async function excluirAgendamento(id) {
-    try {
-        const comando = `DELETE FROM AGENDAMENTOS WHERE ID = ?`;
-        await con.query(comando, [id]);
-        return { mensagem: "Agendamento deletado com sucesso!" };
-    } catch (error) {
-        throw new Error(error.message);
-    }
-}
-
-// Rota para exibir os agendamentos de um cliente
-
-
-// Rota para exibir os agendamentos de um dia
-export async function exibirAgendamentoData(agendamento) {
-    try {
-        const query = `SELECT * FROM AGENDAMENTOS WHERE DATA = ?`;
-        let resp = await con.query(query, [agendamento.data]);
         return resp[0];
     }
     catch (error) {
