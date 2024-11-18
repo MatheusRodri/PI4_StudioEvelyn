@@ -1,5 +1,5 @@
 // importe de bibliotecas
-import React, { useEffect, useState, useMemo, useLayoutEffect } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -63,6 +63,7 @@ function Agendamento() {
   // useEffect para buscar detalhes do usuário
   useEffect(() => {
     fetchUserDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Rodar apenas uma vez, na montagem
 
   // useEffect para lidar com a lógica de agendamento
@@ -93,7 +94,6 @@ function Agendamento() {
 
     console.log(cachedProcedimento);
     try {
-      console.log("EU TO AQUIII");
       await fetch('http://127.0.0.1:5000/agendamentos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

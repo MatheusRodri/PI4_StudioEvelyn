@@ -3,17 +3,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup, updateCurrentUser } from 'firebase/auth';
+import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth, db } from '../../services/firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
-import axios from 'axios';
 
 export default function Registro() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nome, setNome] = useState('');
-  
+
 
   const nav = useNavigate()
 
@@ -36,11 +35,11 @@ export default function Registro() {
             permissao: 0
           })
         }
-          alert('Usuário cadastrado com sucesso!')
+        alert('Usuário cadastrado com sucesso!')
         nav("/login")
 
       } catch (e) {
-        console.log(e)
+        alert("E-mail já cadastrado")
       }
     }
   }
@@ -55,7 +54,7 @@ export default function Registro() {
 
 
     } catch (error) {
-
+      alert("E-mail já cadastrado")
     }
   }
 
@@ -69,10 +68,10 @@ export default function Registro() {
 
 
     } catch (error) {
-
+      alert("E-mail já cadastrado")
     }
   }
-  
+
   return (
     <>
       <Header />
@@ -87,12 +86,12 @@ export default function Registro() {
           </form>
           <p>ou</p>
           <div className='redes'>
-            
+
             <button className='google-button button-midias' onClick={handleLoginGoogle}>
               <span className='google-icon'>
                 <FaGoogle />
               </span>
-              
+
               Registrar com Google
             </button>
             <button className='facebook-button button-midias' onClick={handleLoginFacebook}>

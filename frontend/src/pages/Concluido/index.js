@@ -1,13 +1,13 @@
 // importe de bibliotecas
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
 // função Agendamento
 function Concluido() {
-   
+
     const nav = useNavigate();
-    
+
     // useEffect para buscar detalhes do usuário
     useEffect(() => {
         handleAgendar();
@@ -39,15 +39,15 @@ function Concluido() {
             });
 
             alert('Agendamento realizado com sucesso!');
-          
+            JSON.parse(localStorage.removeItem('procedimento'));
             nav('/agendamentos');
         } catch (error) {
             console.error('Erro ao agendar:', error);
         }
     };
 
-    
-    
+
+
     return (
         <>
         </>

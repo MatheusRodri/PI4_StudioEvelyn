@@ -76,8 +76,8 @@ function AgendamentoDetalhe() {
 
   const carregarTodosAgendamentos = async () => {
     try {
-      // const response = await axios.get(`http://127.0.0.1:5000/agendamentos`)
-      // setDados(response.data)
+      const response = await axios.get(`http://127.0.0.1:5000/agendamentos`)
+      setDados(response.data)
     } catch (error) {
       console.error('Erro ao carregar agendamentos:', error);
     }
@@ -85,6 +85,7 @@ function AgendamentoDetalhe() {
 
   useEffect(() => {
     fetchUserDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

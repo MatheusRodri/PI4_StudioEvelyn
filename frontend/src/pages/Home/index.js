@@ -2,7 +2,6 @@ import React from 'react';
 import './index.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
 
@@ -12,7 +11,7 @@ export default function Home() {
       <Header />
 
       <main className="container">
-        
+
         {/* Seção da primeira imagem com texto */}
         <section className="section">
           <img
@@ -66,7 +65,7 @@ export default function Home() {
             </p>
           </article>
         </section>
-          
+
         {/* Seção da quarta imagem com texto */}
         <section className="section">
           <article className="textSection">
