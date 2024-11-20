@@ -1,6 +1,5 @@
 //importa o Link do react-router-dom e os icones do react-icons e o css do componente
-import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import './index.css';
 
 export default function Footer() {
@@ -10,15 +9,12 @@ export default function Footer() {
                 <p>Desenvolvido por: Agatha Vitoria, Emily, Felipe e Matheus</p>
             </section>
             <section id="redes">
-                <Link className="icon" href="https://www.facebook.com/" target="_blank">
-                    <FaFacebook />
-                </Link>
-                <Link className="icon" href="https://www.instagram.com/" target="_blank">
+                <a className="icon" href="https://www.instagram.com/studioevelynciliosesobrancelha?igsh=MWlhcmpyYTVtNDI3eQ%3D%3D" target="_blank" rel="noreferrer">
                     <FaInstagram />
-                </Link>
-                <Link className="icon" href="#" target="_blank">
+                </a>
+                <a className="icon" href="https://api.whatsapp.com/send?phone=5511948043847&text=Ol%C3%A1,como%20posso%20ajudar?" target="_blank" rel="noreferrer">
                     <FaWhatsapp />
-                </Link>
+                </a>
             </section>
         </footer>
     )
