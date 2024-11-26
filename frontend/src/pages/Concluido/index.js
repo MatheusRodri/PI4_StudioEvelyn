@@ -39,7 +39,8 @@ function Concluido() {
             });
 
             alert('Agendamento realizado com sucesso!');
-            JSON.parse(localStorage.removeItem('procedimento'));
+            localStorage.removeItem('procedimento');
+            console.log('Agendamento realizado com sucesso!');
             nav('/agendamentos');
         } catch (error) {
             console.error('Erro ao agendar:', error);

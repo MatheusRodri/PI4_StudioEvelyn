@@ -102,13 +102,22 @@ function AgendamentoDetalhe() {
     return newDate.toLocaleDateString('pt-BR');
   }
 
+  function handleLoggout() {
+    auth.signOut().then(() => {
+      localStorage.removeItem('usuario');
+      nav('/login');
+    }).catch((error) => {
+      console.error('Erro ao fazer logout:', error);
+    });
+  }
+
   return (
     <>
       <Header />
       <main className='main'>
         <h2>Detalhes dos Agendamentos</h2>
         <div className='nomeEbotao'>
-          <p className='nameUser'>{verificaHorario() + " " + (usuario.displayName || '')}</p>
+          <p className='nameUser'>{verificaHorario() + " " + (usuario.displayName || '')}<span onClick={handleLoggout}>Sair</span> </p>
           <button className='buttonAgendar'>
             <Link to="/agendamento">Agendar</Link>
           </button>
@@ -125,7 +134,6 @@ function AgendamentoDetalhe() {
                   <p><strong>Data:</strong> {converteData(agendamento.DATA)}</p>
                   <p><strong>Horário:</strong> {agendamento.HORA}</p>
                   <p><strong>Valor:</strong> {"R$ " + agendamento.VALOR + ",00"}</p>
-                  <p><strong>Forma de pagamento:</strong> {agendamento.TP_PAGAMENTO}</p>
                 </div>
               ))
             ) : (
@@ -135,7 +143,7 @@ function AgendamentoDetalhe() {
                   <p><strong>Data:</strong> {converteData(agendamento.DATA)}</p>
                   <p><strong>Horário:</strong> {agendamento.HORA}</p>
                   <p><strong>Valor:</strong> {"R$ " + agendamento.VALOR + ",00"}</p>
-                  <p><strong>Forma de pagamento:</strong> {agendamento.TP_PAGAMENTO}</p>
+
                 </div>
               ))
             )
