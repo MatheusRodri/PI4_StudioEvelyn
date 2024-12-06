@@ -21,22 +21,27 @@ function AgendamentoDetalhe() {
   });
 
   const fetchUserDetails = async () => {
-    const cachedUser = JSON.parse(localStorage.getItem('usuario'));
+
+    let cachedUser = JSON.parse(localStorage.getItem('usuario'));
+
+    if (cachedUser.email == 'adm@adm.com') {
+      cachedUser = null
+    }
     if (cachedUser) {
       setUsuario(cachedUser);
+
     } else if (!auth.currentUser) {
       nav('/login');
+
     } else {
       const user = auth.currentUser;
-
       if (!user.displayName) {
+
         auth.onAuthStateChanged(async (user) => {
           if (user) {
             const refDoc = doc(db, 'users', user.uid);
             const docSnap = await getDoc(refDoc);
-
             if (docSnap.exists()) {
-              console.log(docSnap.data());
               setUsuario(docSnap.data());
               localStorage.setItem('usuario', JSON.stringify(docSnap.data()));
             } else {
@@ -47,6 +52,7 @@ function AgendamentoDetalhe() {
           }
         });
       } else {
+        console.log('Usuário tem nome definido 4');
         setUsuario(user);
       }
     }
@@ -89,6 +95,7 @@ function AgendamentoDetalhe() {
   }, []);
 
   useEffect(() => {
+    console.log(usuario);
     if (usuario && usuario.permissao === 1) {
       carregarTodosAgendamentos();
     } else {
