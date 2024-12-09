@@ -32,7 +32,6 @@ servidor.post('/create-checkout-session', async (req, res) => {
     quantity: 1, // Define quantidade padrão como 1
   }));
 
-  console.log(items);
 
   try {
     const session = await stripe.checkout.sessions.create({
