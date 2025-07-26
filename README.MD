@@ -1,4 +1,5 @@
-# Sobre o projeto
+# PI 4 STUDIO EVELYN 
+## Sobre o projeto
 
 O projeto **Glam** é um projeto de agendamento online de studio de beleza, onde o cliente pode agendar um horário para fazer um procedimento no studio de beleza e efetuar o pagamento online. O(A) dono(a) do studio de beleza pode ver os agendamentos e confirmar o agendamento.
 
